@@ -1,8 +1,8 @@
 <template>
     <div id="HomeView">
-        <v-container fluid>
-            <p class="mx-auto">
-                Pure CSS spinners made with simplicity in mind. Simple to use and easy to setup on any website. 
+        <v-container fluid style="padding-bottom: 0 !important;" pt-5>
+            <p class="mx-auto" :style="{ 'margin-top': $vuetify.breakpoint.mdAndUp ? '48px': 'unset' }">
+                Pure CSS spinners made with simplicity in mind. Simple to use, easy to setup on any website. 
             </p>
 
             <p class="mx-auto">
@@ -11,73 +11,73 @@
                 More spinners coming soon...
             </p>
 
-            <v-carousel v-model="currentItem" hide-delimiters :cycle="false" height="45vh">
+            <v-carousel v-model="currentItem" hide-delimiters :cycle="false" height="40vh">
                 <v-carousel-item v-for="spinner in spinners" :key="spinner.name" class="spinner-container">
                     <component :is="spinner" />
                 </v-carousel-item>
             </v-carousel>
+        </v-container>
 
-            <v-container style="max-width: 850px;">
-                <v-scroll-y-transition mode="out-in">
-                    <v-tabs dark color="#212121">
-                        <v-tab key="html">
-                            Html
-                        </v-tab>
-                        <v-tab key="vue">
-                            Vue
-                        </v-tab>
-                        <v-tab disabled>
-                            More soon
-                        </v-tab>
-                        
-                        <v-tab-item key="html">
-                            <v-sheet dark color="#212121" class="markup pa-3">
-                                <!-- <small style="color: #dc64b2">name:</small> {{ spinners[currentItem].name | spinnerName }} -->
+        <v-container style="max-width: 1000px;">
+            <v-scroll-y-transition mode="out-in">
+                <v-tabs dark color="#212121">
+                    <v-tab key="html">
+                        Html
+                    </v-tab>
+                    <v-tab key="vue">
+                        Vue
+                    </v-tab>
+                    <v-tab disabled>
+                        More soon
+                    </v-tab>
+                    
+                    <v-tab-item key="html">
+                        <v-sheet dark color="#212121" class="markup pa-3">
+                            <!-- <small style="color: #dc64b2">name:</small> {{ spinners[currentItem].name | spinnerName }} -->
 
-                                <code>
-                                    <div v-html="$options.filters.htmlComment('Copy and paste the link below into your HTML head')"></div>
-                                    <div v-html="$options.filters.htmlLink(`https://unpkg.com/@knekk/spinners@${ version }/dist/${ $options.filters.spinnerLinkName(spinners[currentItem].name) }.css`)"></div>
-                                </code>
+                            <code>
+                                <div v-html="$options.filters.htmlComment('Copy and paste the link below into your HTML head')"></div>
+                                <div v-html="$options.filters.htmlLink(`https://unpkg.com/@knekk/spinners@${ version }/dist/${ $options.filters.spinnerLinkName(spinners[currentItem].name) }.css`)"></div>
+                            </code>
 
-                                <code>
-                                    <div v-html="$options.filters.htmlComment('Copy and paste the spinner element where you want it in your HTML body')"></div>
-                                    <div v-html="$options.filters.htmlSpinner($options.filters.spinnerClass(spinners[currentItem].name))"></div>
-                                </code>
-                            </v-sheet>
-                        </v-tab-item>
-                        <v-tab-item key="vue">
-                            <v-sheet dark color="#212121" class="markup pa-3">
-                                <!-- <small style="color: #dc64b2">name:</small> {{ spinners[currentItem].name | spinnerName }} -->
+                            <code>
+                                <div v-html="$options.filters.htmlComment('Copy and paste the spinner element where you want it in your HTML body')"></div>
+                                <div v-html="$options.filters.htmlSpinner($options.filters.spinnerClass(spinners[currentItem].name))"></div>
+                            </code>
+                        </v-sheet>
+                    </v-tab-item>
+                    <v-tab-item key="vue">
+                        <v-sheet dark color="#212121" class="markup pa-3">
+                            <!-- <small style="color: #dc64b2">name:</small> {{ spinners[currentItem].name | spinnerName }} -->
 
-                                <code>
-                                    <div v-html="$options.filters.bashComment('Install with npm')"></div>
-                                    <div v-html="$options.filters.bashCommand('npm install @knekk/spinners')"></div>
-                                </code>
+                            <code>
+                                <div v-html="$options.filters.bashComment('Install with npm')"></div>
+                                <div v-html="$options.filters.bashCommand('npm install @knekk/spinners')"></div>
+                            </code>
 
-                                <code>
-                                    <div v-html="$options.filters.javascriptComment('Import and use in components')"></div>
-                                    <div><span class="javascript--statement">import</span><span class="javascript--code"> { {{ spinners[currentItem].name | spinnerName }} } </span><span class="javascript--statement">from</span> '@knekk/spinners'</div>
-                                    <div><span class="javascript--statement">export</span><span class="javascript--keyword"> default </span> <span class="javascript--code">{</span></div>
-                                    <div class="pl-3"><span class="javascript--code">components: {</span></div>
-                                    <div class="pl-5"><span class="javascript--code">{{ spinners[currentItem].name | spinnerName }}</span></div>
-                                    <div class="pl-3"><span class="javascript--code">}</span></div>
-                                    <div><span class="javascript--code">}</span></div>
-                                </code>
+                            <code>
+                                <div v-html="$options.filters.javascriptComment('Import and use in components')"></div>
+                                <div><span class="javascript--statement">import</span><span class="javascript--code"> { {{ spinners[currentItem].name | spinnerName }} } </span><span class="javascript--statement">from</span> '@knekk/spinners'</div>
+                                <div><span class="javascript--statement">export</span><span class="javascript--keyword"> default </span> <span class="javascript--code">{</span></div>
+                                <div class="pl-3"><span class="javascript--code">components: {</span></div>
+                                <div class="pl-5"><span class="javascript--code">{{ spinners[currentItem].name | spinnerName }}</span></div>
+                                <div class="pl-3"><span class="javascript--code">}</span></div>
+                                <div><span class="javascript--code">}</span></div>
+                            </code>
 
-                                <code>
-                                    <div v-html="$options.filters.htmlComment('In SFC, string templates, and JSX')"></div>
-                                    <div v-html="$options.filters.htmlElement(`${ $options.filters.spinnerName(spinners[currentItem].name) }/`)"></div>
-                                </code>
+                            <code>
+                                <div v-html="$options.filters.htmlComment('In SFC, string templates, and JSX')"></div>
+                                <div v-html="$options.filters.htmlElement(`${ $options.filters.spinnerName(spinners[currentItem].name) }/`)"></div>
+                            </code>
 
-                                <code>
-                                    <div v-html="$options.filters.htmlComment('Or in DOM templates')"></div>
-                                    <div><span v-html="$options.filters.htmlElement(spinners[currentItem].name)"></span><span v-html="$options.filters.htmlElement(`/${ spinners[currentItem].name }`)"></span></div>
-                                </code>
-                            </v-sheet>
-                        </v-tab-item>
-                    </v-tabs>
-                </v-scroll-y-transition>
-            </v-container>
+                            <code>
+                                <div v-html="$options.filters.htmlComment('Or in DOM templates')"></div>
+                                <div><span v-html="$options.filters.htmlElement(spinners[currentItem].name)"></span><span v-html="$options.filters.htmlElement(`/${ spinners[currentItem].name }`)"></span></div>
+                            </code>
+                        </v-sheet>
+                    </v-tab-item>
+                </v-tabs>
+            </v-scroll-y-transition>
         </v-container>
     </div>
 </template>
