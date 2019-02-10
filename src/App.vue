@@ -6,7 +6,7 @@
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-xs-only">
-                <v-btn flat href="https://github.com/knekki">Github</v-btn>
+                <v-btn flat href="https://github.com/knekki/spinners">Github</v-btn>
                 <v-btn depressed href="https://twitter.com/knekkii" target="_blank">Kenneth Aamås</v-btn>
             </v-toolbar-items>
 
@@ -14,7 +14,7 @@
                 <v-btn slot="activator" flat icon><v-icon>code</v-icon></v-btn>
 
                 <v-list>
-                    <v-list-tile href="https://github.com/knekki">Github</v-list-tile>
+                    <v-list-tile href="https://github.com/knekki/spinners">Github</v-list-tile>
                     <v-list-tile href="https://twitter.com/knekkii" target="_blank">
                         Kenneth Aamås
                         <v-avatar size="28" class="pl-3 mr-1">

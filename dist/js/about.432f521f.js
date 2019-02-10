@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{ef4c:function(e,n,t){"use strict";t.r(n);var u=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div")},a=[],c={name:"AboutView"},l=c,o=t("2877"),i=Object(o["a"])(l,u,a,!1,null,null,null);n["default"]=i.exports}}]);
-//# sourceMappingURL=about.4f38df51.js.map
+//# sourceMappingURL=about.432f521f.js.map
