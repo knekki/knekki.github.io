@@ -6,5 +6,6 @@ module.exports = {
                 return args
             })
     },
-    indexPath: '../index.html'
+    indexPath: '../index.html',
+    publicPath: '/dist/'
 }
