@@ -7,5 +7,7 @@ module.exports = {
             })
     },
     indexPath: '../index.html',
-    publicPath: '/dist/'
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/dist/'
+        : '/'
 }

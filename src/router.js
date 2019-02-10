@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history',
+  mode: 'hash', // 'history' mode doesn't work with Github pages.
   base: process.env.BASE_URL,
   routes: [
     {
@@ -19,7 +19,7 @@ const router = new Router({
     {
       path: '/about',
       name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/about/About.vue'),
+      component: () => import(/* webpackChunkName: "about" */ '@/views/about/About.vue'),
       meta: {
         title: 'Kenneth Aamås'
       }
