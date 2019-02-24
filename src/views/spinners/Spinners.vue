@@ -83,7 +83,7 @@
 </template>
 
 <script>
-import { KSpinnerSpin, KSpinnerPulse } from '@knekk/spinners'
+import { KSpinnerSpin, KSpinnerPulse, KSpinnerSwirl } from '@knekk/spinners'
 
 export default {
     name: 'SpinnersView',
@@ -91,7 +91,8 @@ export default {
         return {
             spinners: [
                 KSpinnerSpin,
-                KSpinnerPulse
+                KSpinnerPulse,
+                KSpinnerSwirl
             ],
             currentItem: 0,
             version: process.env['@knekk/spinners']
